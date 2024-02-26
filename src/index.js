@@ -1,6 +1,7 @@
  //require('dotenv').config({path:'./env'})
  //to maintain consistnecy 
  import dotenv from 'dotenv' 
+ import { app } from './app.js';
  
  import connectDB from "./db/index.js";
  
@@ -10,6 +11,7 @@
  dotenv.config({
     path:'./env'
  })
+ 
  //app.on()ka code as a assignment
  //promises add karte hai connectDB ko
  connectDB()
@@ -21,6 +23,6 @@
 })
  
  .catch((err)=>{
-   console.log("Mongo db connection failed",err)
+   console.log("Mongo db failed bc",err)
  })
  

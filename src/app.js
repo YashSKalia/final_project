@@ -1,6 +1,10 @@
 import express from "express";
 import cors from 'cors'
-import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
+
+// Now you can use jwt.sign(), jwt.verify(), etc.
+
+
 import bcrypt from 'bcrypt'
 import cookieParser from "cookie-parser";
 
@@ -17,5 +21,10 @@ app.use(express.urlencoded())
 app.use(express.static("public"))
 //cookie access kar paou aur set kar paou
 app.use(cookieParser())
+
+//after all middleware we setup th routes
+//routes niche import karunga mai meri marzi bc bkl
+import userRouter from './routes/user.routes.js'
+app.use("/api/v1/users/",userRouter)
 
 export {app}
