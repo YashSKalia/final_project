@@ -14,9 +14,10 @@ app.use(cors({
     origin:process.env.CORS_ORIGIN,
     credentials:true
 }))
+
 //ab hum uri data jho bejegi usko handle karnege,like koi uri forms bhejti hia koi body koi json
 app.use(express.json({limit:"16 kb"}))
-app.use(express.urlencoded())
+app.use(express.urlencoded({extended:true}))
 //incase muje koi photo ya favicon type stored rakhna hai tho yeh use karunga
 app.use(express.static("public"))
 //cookie access kar paou aur set kar paou
